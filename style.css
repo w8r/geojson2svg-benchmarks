@@ -5,4 +5,5 @@ html, body {
 
 svg path {
   fill-opacity: 0.75;
+  stroke: #fff;
 }

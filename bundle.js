@@ -43,9 +43,9 @@ var vis = (0, _d.select)('#vis').append('svg').attr('width', width).attr('height
 
   // add a rectangle to see the bound of the svg
   console.time('d3');
-  vis.append('rect').attr('width', width).attr('height', height).style('stroke', 'black').style('fill', 'none');
+  vis.append('rect').attr('width', width).attr('height', height).style('fill', 'none');
 
-  vis.selectAll('vis').data(json.features).enter().append('path').attr('d', path).style('fill', 'red').style('stroke-width', 0.25).style('stroke', 'black');
+  vis.selectAll('vis').data(json.features).enter().append('path').attr('d', path).style('fill', 'red').style('stroke-width', 0.25);
   console.timeEnd('d3');
 
   var container = document.createElement('div');
@@ -55,13 +55,11 @@ var vis = (0, _d.select)('#vis').append('svg').attr('width', width).attr('height
   var svg = (0, _geojsonToSvg2.default)().projection(projection).data(json).extent([0, 0].concat(bounds[1])).styles({
     Polygon: {
       fill: 'red',
-      weight: 0.25,
-      stroke: 'black'
+      weight: 0.25
     },
     MultiPolygon: {
       fill: 'brown',
-      weight: 0.25,
-      stroke: 'black'
+      weight: 0.25
     }
   }).render();
   console.timeEnd('gj2svg');

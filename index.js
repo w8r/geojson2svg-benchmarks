@@ -49,7 +49,6 @@ json('world.geojson', (json) => {
   vis.append('rect')
     .attr('width', width)
     .attr('height', height)
-    .style('stroke', 'black')
     .style('fill', 'none');
 
   vis.selectAll('vis')
@@ -58,8 +57,7 @@ json('world.geojson', (json) => {
     .append('path')
     .attr('d', path)
     .style('fill', 'red')
-    .style('stroke-width', 0.25)
-    .style('stroke', 'black');
+    .style('stroke-width', 0.25);
   console.timeEnd('d3');
 
   const container = document.createElement('div');
@@ -73,13 +71,11 @@ json('world.geojson', (json) => {
     .styles({
       Polygon: {
         fill: 'red',
-        weight: 0.25,
-        stroke: 'black'
+        weight: 0.25
       },
       MultiPolygon: {
         fill: 'brown',
-        weight: 0.25,
-        stroke: 'black'
+        weight: 0.25
       }
     })
     .render();
